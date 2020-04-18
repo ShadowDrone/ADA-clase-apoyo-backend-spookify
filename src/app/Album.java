@@ -8,6 +8,19 @@ import java.util.List;
  */
 public class Album {
 
+    public Album(){
+
+    }
+
+    public Album(String nombre){
+        this.nombre = nombre;
+    }
+
+    public Album(int anio, String nombre){
+        this.nombre = nombre;
+        this.anio = anio;
+    }
+
     public String nombre;
     // AÑo lanzamientos
     public int anio;

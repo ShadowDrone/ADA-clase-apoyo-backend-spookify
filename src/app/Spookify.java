@@ -29,6 +29,11 @@ public class Spookify {
         return null;
     }
 
+    public Album buscarAlbum(Album albumAbuscar) {
+        return this.buscarAlbum(albumAbuscar.nombre);
+    }
+
+
     public Cancion buscarCancion(String nombreCancion) {
         for (Album album : this.albums) {
             Cancion cancion;
@@ -38,6 +43,19 @@ public class Spookify {
                 return cancion;
         }
         return null;
+    }
+
+    public List<Cancion> buscarCanciones(String nombreCancion) {
+        List<Cancion> laListaCanciones = new ArrayList<>();
+
+        for (Album album : this.albums) {
+            Cancion cancion;
+
+            cancion = album.buscarCancion(nombreCancion);
+            if (cancion != null)
+                laListaCanciones.add(cancion);
+        }
+        return laListaCanciones;
     }
 
 }
